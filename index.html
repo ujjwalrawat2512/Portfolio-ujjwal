@@ -3,142 +3,223 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ujjwal Singh Rawat| Web Developer</title>
-    <!-- Tailwind CSS via CDN (Great for quick prototyping!) -->
+    <title>Ujjwal | Creative Developer</title>
+    
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-slate-900 text-slate-100 font-sans antialiased">
+    
+    <!-- Animation Stylesheet (AOS) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-    <!-- 1. NAVIGATION -->
-    <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800">
-        <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-xl font-bold tracking-tight text-indigo-400">Ujjwal.dev</a>
-            <ul class="flex gap-6 text-sm font-medium text-slate-300">
-                <li><a href="#about" class="hover:text-indigo-400 transition-colors">About</a></li>
-                <li><a href="#projects" class="hover:text-indigo-400 transition-colors">Projects</a></li>
-                <li><a href="#skills" class="hover:text-indigo-400 transition-colors">Skills</a></li>
-                <li><a href="#contact" class="hover:text-indigo-400 transition-colors">Contact</a></li>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: '#4f46e5', // Indigo
+                        accent: '#06b6d4', // Cyan
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['Fira Code', 'monospace'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Fira+Code&display=swap');
+        
+        .text-underline-animation {
+            display: inline-block;
+            position: relative;
+            color: #111827;
+        }
+        .text-underline-animation::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            transform: scaleX(0);
+            height: 2px;
+            bottom: -2px;
+            left: 0;
+            background-color: #4f46e5;
+            transform-origin: bottom right;
+            transition: transform 0.25s ease-out;
+        }
+        .text-underline-animation:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+    </style>
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased selection:bg-indigo-100">
+
+    <!-- NAVIGATION BAR -->
+    <header class="fixed top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#hero" class="text-xl font-extrabold tracking-tighter text-gray-950 hover:text-brand transition-colors">
+                UJJWAL<span class="text-indigo-600">.DEV</span>
+            </a>
+            <ul class="flex gap-8 text-sm font-medium text-gray-700">
+                <li><a href="#about" class="text-underline-animation">About</a></li>
+                <li><a href="#projects" class="text-underline-animation">Projects</a></li>
+                <li><a href="#skills" class="text-underline-animation">Skills</a></li>
+                <li><a href="#contact" class="text-underline-animation">Contact</a></li>
             </ul>
-            <button id="theme-toggle" class="p-2 text-slate-400 hover:text-indigo-400 transition-colors" aria-label="Toggle Theme">
-    🌙 / ☀️
-</button>
         </nav>
     </header>
 
-    <main class="max-w-5xl mx-auto px-6 space-y-24 py-12">
+    <main class="pt-16">
 
-        <!-- 2. HERO SECTION -->
-        <section id="hero" class="min-h-[60vh] flex flex-col justify-center items-start space-y-4">
-            <span class="text-indigo-400 font-mono text-sm">Hi, my name is</span>
-            <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight">Ujjwal SIngh Rawat.</h1>
-            <h2 class="text-3xl sm:text-4xl font-semibold text-slate-400">I build things for the web.</h2>
-            <p class="max-w-xl text-slate-400 text-lg">
-                I'm an aspiring developer learning modern web technologies and building projects using HTML, CSS, JavaScript, and Git.
+        <!-- SECTION 1: HERO (Pure Crisp White) -->
+        <section id="hero" class="bg-white min-h-[90vh] flex flex-col justify-center max-w-7xl mx-auto px-6 py-20">
+            <div data-aos="fade-up" class="space-y-4">
+                <span class="inline-block px-3 py-1 rounded-full text-xs font-mono bg-indigo-50 text-indigo-600 border border-indigo-100">
+                    👋 Welcome to my portfolio
+                </span>
+                <h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter leading-none text-gray-950">
+                    Hi, I'm Ujjwal.
+                </h1>
+                <h2 class="text-3xl md:text-5xl font-bold text-gray-400 tracking-tight">
+                    I am <span id="typing-effect" class="text-indigo-600"></span>
+                </h2>
+            </div>
+            
+            <p data-aos="fade-up" data-aos-delay="200" class="max-w-2xl text-lg text-gray-600 leading-relaxed mt-6">
+                Full-stack & AI engineering enthusiast focused on building high-performance web applications, modern UI components, and clean version-controlled software architecture.
             </p>
-            <div class="pt-4 flex gap-4">
-                <a href="#projects" class="px-6 py-3 bg-indigo-600 hover:bg-indigo-500 font-medium rounded-lg transition-all">View Work</a>
-                <a href="#contact" class="px-6 py-3 border border-slate-700 hover:border-slate-500 font-medium rounded-lg transition-all">Get in Touch</a>
+            
+            <div data-aos="fade-up" data-aos-delay="400" class="pt-8 flex flex-wrap gap-4">
+                <a href="#projects" class="px-8 py-3.5 bg-indigo-600 text-white font-semibold rounded-xl shadow-lg shadow-indigo-100 hover:bg-indigo-700 transition-all hover:-translate-y-0.5">
+                    View Work
+                </a>
+                <a href="#contact" class="px-8 py-3.5 border border-gray-200 text-gray-800 font-semibold rounded-xl hover:bg-gray-50 transition-all">
+                    Contact Me
+                </a>
             </div>
         </section>
 
-        <!-- 3. ABOUT ME SECTION -->
-        <section id="about" class="space-y-6">
-            <h2 class="text-2xl font-bold text-slate-100 flex items-center gap-2">
-                <span class="text-indigo-400 font-mono">01.</span> About Me
-            </h2>
-            <div class="grid md:grid-cols-3 gap-8 items-center">
-                <div class="md:col-span-2 space-y-4 text-slate-400 leading-relaxed">
-                    <p>
-                        Hello! I'm Ujjwal SIngh Rawat, passionate about problem-solving and software development. I started my coding journey learning the core concepts of web architecture and version control.
-                    </p>
-                    <p>
-                        My current focus is building responsive, accessible web applications while mastering modern developer tools and continuous deployment workflows.
-                    </p>
+
+        <!-- SECTION 2: ABOUT ME (Soft Ice Blue / Slate - bg-slate-50) -->
+        <section id="about" class="bg-slate-50 border-y border-slate-200/60 py-24">
+            <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12 items-center">
+                <div data-aos="fade-right" class="md:col-span-2 space-y-6">
+                    <h2 class="text-3xl font-extrabold tracking-tight text-slate-900 flex items-center gap-4">
+                        <span class="text-indigo-600 font-mono text-xl">01.</span> About Me
+                        <div class="h-px bg-slate-200 flex-1"></div>
+                    </h2>
+                    <div class="text-lg text-slate-600 space-y-4 leading-relaxed">
+                        <p>
+                            I enjoy turning complex backend logic and user requirements into clean, interactive, and beautifully animated web applications.
+                        </p>
+                        <p>
+                            My foundation includes modern web architecture, responsive layouts with Tailwind CSS, dynamic JavaScript, RESTful APIs, and version control workflows using Git & GitHub.
+                        </p>
+                    </div>
                 </div>
-
-
-                <!-- Profile Image / Placeholder -->
-                <div class="flex justify-center">
-                    <div class="w-48 h-48 rounded-2xl bg-indigo-950 border-2 border-indigo-500/30 flex items-center justify-center text-slate-500">
-                        [ Profile Photo ]
+                <div data-aos="zoom-in" data-aos-delay="200" class="flex justify-center">
+                    <div class="w-56 h-56 rounded-3xl bg-white border border-slate-200 p-4 shadow-sm flex flex-col justify-center items-center text-center space-y-2">
+                        <div class="w-16 h-16 rounded-2xl bg-indigo-50 text-indigo-600 flex items-center justify-center font-bold text-xl font-mono">
+                            &lt;/&gt;
+                        </div>
+                        <span class="font-bold text-slate-800 text-sm">Clean Architecture</span>
+                        <span class="text-xs text-slate-400 font-mono">Git & GitHub Tracked</span>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- 4. PROJECTS SECTION -->
-        <section id="projects" class="space-y-6">
-            <h2 class="text-2xl font-bold text-slate-100 flex items-center gap-2">
-                <span class="text-indigo-400 font-mono">02.</span> Projects
-            </h2>
-            <div class="grid md:grid-cols-2 gap-6">
-                <!-- Project Card 1 (This Portfolio!) -->
-                <article class="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl hover:border-indigo-500/50 transition-all space-y-4">
-                    <div class="flex justify-between items-start">
-                        <h3 class="text-xl font-bold text-slate-100">The Indus Group Of Co.</h3>
-                        <a href="https://theindusgroup.com/" target="_blank" class="text-slate-400 hover:text-indigo-400 font-mono text-sm">GitHub ↗</a>
-                    </div>
-                    <p class="text-slate-400 text-sm">
-                        An internship project where I lead the fellow developers intern to create the company's main website. 
-                    </p>
-                    <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono text-indigo-300">
-                        <span class="px-2 py-1 bg-slate-800 rounded">Nextjs</span>
-                        <span class="px-2 py-1 bg-slate-800 rounded">Git</span>
-                    </div>
-                </article>
 
-                <!-- Project Card 2 Placeholder -->
-                <article class="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl hover:border-indigo-500/50 transition-all space-y-4">
-                    <div class="flex justify-between items-start">
-                        <h3 class="text-xl font-bold text-slate-100">Upcoming Project</h3>
-                        <span class="text-slate-500 font-mono text-sm">In Progress</span>
-                    </div>
-                    <p class="text-slate-400 text-sm">
-                    </p>
-                    <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono text-indigo-300">
-                        <span class="px-2 py-1 bg-slate-800 rounded">JavaScript</span>
-                        <span class="px-2 py-1 bg-slate-800 rounded">API</span>
-                    </div>
-                </article>
+        <!-- SECTION 3: PROJECTS (Warm Ivory Tint - bg-amber-50/40) -->
+        <section id="projects" class="bg-amber-50/40 py-24 border-b border-amber-100/60">
+            <div class="max-w-7xl mx-auto px-6 space-y-12">
+                <h2 data-aos="fade-up" class="text-3xl font-extrabold tracking-tight text-gray-900 flex items-center gap-4">
+                    <span class="text-indigo-600 font-mono text-xl">02.</span> Projects Showcase
+                    <div class="h-px bg-amber-200/60 flex-1"></div>
+                </h2>
+                
+                <div class="grid md:grid-cols-2 gap-8">
+                    <!-- Project Card 1 -->
+                    <article data-aos="fade-up" data-aos-delay="100" class="bg-white p-8 rounded-2xl border border-amber-100 shadow-sm hover:shadow-xl hover:border-indigo-200 hover:-translate-y-1 transition-all duration-300 space-y-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold text-gray-900">Developer Portfolio</h3>
+                            <span class="text-xs font-mono text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-md border border-indigo-100">Active</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            Personal portfolio website built with HTML5, Tailwind CSS, JavaScript, and scroll animations. Managed with Git version control and hosted on GitHub Pages.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono text-gray-500">
+                            <span class="bg-slate-100 px-3 py-1 rounded-md">HTML5</span>
+                            <span class="bg-slate-100 px-3 py-1 rounded-md">Tailwind</span>
+                            <span class="bg-slate-100 px-3 py-1 rounded-md">JavaScript</span>
+                            <span class="bg-slate-100 px-3 py-1 rounded-md">Git</span>
+                        </div>
+                    </article>
+                    
+                    <!-- Project Card 2 -->
+                    <article data-aos="fade-up" data-aos-delay="200" class="bg-white p-8 rounded-2xl border border-amber-100 shadow-sm hover:shadow-xl hover:border-indigo-200 hover:-translate-y-1 transition-all duration-300 space-y-4">
+                        <div class="flex justify-between items-start">
+                            <h3 class="text-xl font-bold text-gray-900">Web Application</h3>
+                            <span class="text-xs font-mono text-gray-400 bg-gray-100 px-2.5 py-1 rounded-md">In Progress</span>
+                        </div>
+                        <p class="text-gray-600 text-sm leading-relaxed">
+                            An upcoming web app focusing on dynamic UI component interaction, API integrations, and continuous deployment workflows.
+                        </p>
+                        <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono text-gray-500">
+                            <span class="bg-slate-100 px-3 py-1 rounded-md">JavaScript</span>
+                            <span class="bg-slate-100 px-3 py-1 rounded-md">REST API</span>
+                        </div>
+                    </article>
+                </div>
             </div>
         </section>
 
-        <!-- 5. SKILLS SECTION -->
-        <section id="skills" class="space-y-6">
-            <h2 class="text-2xl font-bold text-slate-100 flex items-center gap-2">
-                <span class="text-indigo-400 font-mono">03.</span> Tech Stack
-            </h2>
-            <div class="flex flex-wrap gap-3 font-mono text-sm">
-                <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg">HTML5</span>
-                <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg">CSS3 / Tailwind</span>
-                <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg">JavaScript (ES6+)</span>
-                <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg">Git & GitHub</span>
-                <span class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-lg">VS Code</span>
+
+        <!-- SECTION 4: SKILLS (Soft Violet / Indigo Tint - bg-indigo-50/50) -->
+        <section id="skills" class="bg-indigo-50/50 py-24 border-b border-indigo-100/60">
+            <div class="max-w-7xl mx-auto px-6 space-y-12">
+                <h2 data-aos="fade-up" class="text-3xl font-extrabold tracking-tight text-gray-900 flex items-center gap-4">
+                    <span class="text-indigo-600 font-mono text-xl">03.</span> Tech Stack
+                    <div class="h-px bg-indigo-200/60 flex-1"></div>
+                </h2>
+                <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center font-mono text-sm">
+                    <div data-aos="zoom-in" data-aos-delay="100" class="p-6 bg-white border border-indigo-100 rounded-2xl shadow-sm hover:shadow-md transition-all font-bold text-slate-800">HTML5 & CSS3</div>
+                    <div data-aos="zoom-in" data-aos-delay="200" class="p-6 bg-white border border-indigo-100 rounded-2xl shadow-sm hover:shadow-md transition-all font-bold text-slate-800">Tailwind CSS</div>
+                    <div data-aos="zoom-in" data-aos-delay="300" class="p-6 bg-white border border-indigo-100 rounded-2xl shadow-sm hover:shadow-md transition-all font-bold text-slate-800">JavaScript (ES6+)</div>
+                    <div data-aos="zoom-in" data-aos-delay="400" class="p-6 bg-white border border-indigo-100 rounded-2xl shadow-sm hover:shadow-md transition-all font-bold text-slate-800">Git & GitHub</div>
+                </div>
             </div>
         </section>
 
-        <!-- 6. CONTACT SECTION -->
-        <section id="contact" class="space-y-6 text-center py-12">
-            <h2 class="text-3xl font-bold text-slate-100">Get In Touch</h2>
-            <p class="max-w-md mx-auto text-slate-400">
-                I'm currently looking for new opportunities and collaborations. Feel free to send an email or connect on LinkedIn!
-            </p>
-            <a href="mailto:your.email@example.com" class="inline-block px-8 py-4 bg-indigo-600 hover:bg-indigo-500 font-semibold rounded-lg transition-all">
-                Say Hello
-            </a>
+
+        <!-- SECTION 5: CONTACT (Soft Emerald Tint - bg-emerald-50/50) -->
+        <section id="contact" class="bg-emerald-50/50 py-24">
+            <div data-aos="zoom-in" class="max-w-3xl mx-auto text-center px-6 space-y-6">
+                <span class="text-xs font-mono font-bold text-emerald-600 bg-emerald-100/80 px-3 py-1 rounded-full border border-emerald-200">
+                    Get In Touch
+                </span>
+                <h2 class="text-4xl font-extrabold tracking-tight text-slate-900">Let's Work Together.</h2>
+                <p class="text-lg text-slate-600 leading-relaxed">
+                    Whether you have a question, a project idea, or want to collaborate, feel free to drop a message!
+                </p>
+                <div class="pt-4">
+                    <a href="mailto:your.email@example.com" class="inline-block px-10 py-4 bg-emerald-600 text-white font-bold rounded-xl shadow-lg shadow-emerald-100 hover:bg-emerald-700 transition-all hover:scale-105">
+                        Say Hello ✉️
+                    </a>
+                </div>
+            </div>
         </section>
 
     </main>
 
-    <!-- 7. FOOTER -->
-    <footer class="border-t border-slate-800 py-6 text-center text-slate-500 text-sm font-mono">
-        <p>Built with HTML & Tailwind CSS • Version controlled with Git</p>
+    <footer class="bg-white border-t border-gray-100 py-8 text-center text-gray-400 text-xs font-mono">
+        Built with HTML5, Tailwind CSS & JS • Tracked with Git
     </footer>
 
-
-    <!-- Include JS Script -->
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script src="script.js"></script>
-
-
 </body>
 </html>
