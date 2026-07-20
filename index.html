@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Software Developer</title>
+    <title>Ujjwal Singh Rawat| Web Developer</title>
     <!-- Tailwind CSS via CDN (Great for quick prototyping!) -->
     <script src="https://cdn.tailwindcss.com"></script>
 </head>
@@ -12,13 +12,16 @@
     <!-- 1. NAVIGATION -->
     <header class="sticky top-0 z-50 backdrop-blur-md bg-slate-900/80 border-b border-slate-800">
         <nav class="max-w-5xl mx-auto px-6 py-4 flex justify-between items-center">
-            <a href="#hero" class="text-xl font-bold tracking-tight text-indigo-400">YourName.dev</a>
+            <a href="#hero" class="text-xl font-bold tracking-tight text-indigo-400">Ujjwal.dev</a>
             <ul class="flex gap-6 text-sm font-medium text-slate-300">
                 <li><a href="#about" class="hover:text-indigo-400 transition-colors">About</a></li>
                 <li><a href="#projects" class="hover:text-indigo-400 transition-colors">Projects</a></li>
                 <li><a href="#skills" class="hover:text-indigo-400 transition-colors">Skills</a></li>
                 <li><a href="#contact" class="hover:text-indigo-400 transition-colors">Contact</a></li>
             </ul>
+            <button id="theme-toggle" class="p-2 text-slate-400 hover:text-indigo-400 transition-colors" aria-label="Toggle Theme">
+    🌙 / ☀️
+</button>
         </nav>
     </header>
 
@@ -27,7 +30,7 @@
         <!-- 2. HERO SECTION -->
         <section id="hero" class="min-h-[60vh] flex flex-col justify-center items-start space-y-4">
             <span class="text-indigo-400 font-mono text-sm">Hi, my name is</span>
-            <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight">Your Name.</h1>
+            <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight">Ujjwal SIngh Rawat.</h1>
             <h2 class="text-3xl sm:text-4xl font-semibold text-slate-400">I build things for the web.</h2>
             <p class="max-w-xl text-slate-400 text-lg">
                 I'm an aspiring developer learning modern web technologies and building projects using HTML, CSS, JavaScript, and Git.
@@ -46,12 +49,14 @@
             <div class="grid md:grid-cols-3 gap-8 items-center">
                 <div class="md:col-span-2 space-y-4 text-slate-400 leading-relaxed">
                     <p>
-                        Hello! I'm [Your Name], passionate about problem-solving and software development. I started my coding journey learning the core concepts of web architecture and version control.
+                        Hello! I'm Ujjwal SIngh Rawat, passionate about problem-solving and software development. I started my coding journey learning the core concepts of web architecture and version control.
                     </p>
                     <p>
-                        My current focus is building responsive, accessible web applications while mastering modern developer tools like Git, GitHub, and continuous deployment workflows.
+                        My current focus is building responsive, accessible web applications while mastering modern developer tools and continuous deployment workflows.
                     </p>
                 </div>
+
+
                 <!-- Profile Image / Placeholder -->
                 <div class="flex justify-center">
                     <div class="w-48 h-48 rounded-2xl bg-indigo-950 border-2 border-indigo-500/30 flex items-center justify-center text-slate-500">
@@ -70,15 +75,14 @@
                 <!-- Project Card 1 (This Portfolio!) -->
                 <article class="p-6 bg-slate-800/50 border border-slate-700/50 rounded-xl hover:border-indigo-500/50 transition-all space-y-4">
                     <div class="flex justify-between items-start">
-                        <h3 class="text-xl font-bold text-slate-100">Developer Portfolio</h3>
-                        <a href="https://github.com/yourusername/portfolio" target="_blank" class="text-slate-400 hover:text-indigo-400 font-mono text-sm">GitHub ↗</a>
+                        <h3 class="text-xl font-bold text-slate-100">The Indus Group Of Co.</h3>
+                        <a href="https://theindusgroup.com/" target="_blank" class="text-slate-400 hover:text-indigo-400 font-mono text-sm">GitHub ↗</a>
                     </div>
                     <p class="text-slate-400 text-sm">
-                        A responsive portfolio built to showcase projects, tracked with Git and continuously deployed via GitHub Pages.
+                        An internship project where I lead the fellow developers intern to create the company's main website. 
                     </p>
                     <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono text-indigo-300">
-                        <span class="px-2 py-1 bg-slate-800 rounded">HTML5</span>
-                        <span class="px-2 py-1 bg-slate-800 rounded">Tailwind CSS</span>
+                        <span class="px-2 py-1 bg-slate-800 rounded">Nextjs</span>
                         <span class="px-2 py-1 bg-slate-800 rounded">Git</span>
                     </div>
                 </article>
@@ -90,7 +94,6 @@
                         <span class="text-slate-500 font-mono text-sm">In Progress</span>
                     </div>
                     <p class="text-slate-400 text-sm">
-                        Brief description of your next planned project (e.g., a Weather App, Todo App, or JavaScript Game).
                     </p>
                     <div class="flex flex-wrap gap-2 pt-2 text-xs font-mono text-indigo-300">
                         <span class="px-2 py-1 bg-slate-800 rounded">JavaScript</span>
@@ -131,6 +134,11 @@
     <footer class="border-t border-slate-800 py-6 text-center text-slate-500 text-sm font-mono">
         <p>Built with HTML & Tailwind CSS • Version controlled with Git</p>
     </footer>
+
+
+    <!-- Include JS Script -->
+    <script src="script.js"></script>
+
 
 </body>
 </html>
